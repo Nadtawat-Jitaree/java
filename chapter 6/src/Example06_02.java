@@ -1,0 +1,30 @@
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+public class Example06_02 {
+    public static void main(String[] args) {
+        Example06_02.start();
+        System.exit(0);
+    }
+
+    public static void start() {
+        final int ARRAY_LEN = 10;
+        int array[] = new int[ARRAY_LEN];
+        int total = 0;
+        Random rnd = new Random();
+        for (int index = 0; index < array.length; index++)
+            array[index] = 10 + rnd.nextInt(21);
+
+        String output = "Index\tValue\n";
+        for (int i = 0; i < array.length; i++)
+            output += String.format("%5d", i) + String.format("%5d", array[i]) + "\n";
+        for (int index = 0; index < array.length; index++)
+            total += array[index];
+
+        output += "Total value of array : " + total + "\n";
+        output += "Average value : " + String.format("%5.2f", (float) total / array.length) + "\n";
+        JOptionPane.showMessageDialog(null, output, "Value in Array", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+    }
+}
