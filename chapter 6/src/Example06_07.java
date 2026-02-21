@@ -11,6 +11,7 @@ public class Example06_07 {
         Random rnd = new Random();
         boolean done = true;
         String result;
+        // int array[] = { 31, 2, 4, 5, 7 };
         for (int index = 0; index < array.length; index++)
             array[index] = rnd.nextInt(101);
 
@@ -24,6 +25,7 @@ public class Example06_07 {
                 JOptionPane.showMessageDialog(null, result);
             }
         } while (done);
+        System.exit(0);
     }
 
     public static int linearSearch(int array2[], int key) {

@@ -1,4 +1,6 @@
 
+// จงสร้าง array ข้อมูล 89, 6, 4, 8, 10, 12, 2, 68, 45, 37  ให้ short โดยกำหนดให้มี method instane 3 ตัว arrayToString แปลง array เป็นข้อความ กับ bubbleSort Sort ข้อความ และ swap เพื่อสลับตำแหน่ง
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
@@ -23,11 +25,18 @@ public class Example06_06 {
     }
 
     public void bubbleSort(int array2[]) {
+        boolean done = true;
         for (int pass = 1; pass < array2.length; pass++) {
-            for (int element = 0; element < array2.length - 1; element++) {
-                if (array2[element] > array2[element + 1])
+            done = true;
+            for (int element = 0; element < array2.length - pass; element++) {
+                if (array2[element] > array2[element + 1]) {
                     swap(array2, element, element + 1);
+                    done = false;
+                }
             }
+            System.out.println(pass);
+            if (done)
+                break;
         }
     }
 
